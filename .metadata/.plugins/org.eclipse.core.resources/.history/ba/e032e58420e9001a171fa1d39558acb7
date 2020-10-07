@@ -1,0 +1,85 @@
+package com.cg.obs.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cg.obs.dao.LoanDao;
+import com.cg.obs.entity.Loan;
+import com.cg.obs.exception.LoanException;
+
+//service interface (LoanService) implementation
+@Service
+public class LoanServiceImpl implements LoanService{
+
+	@Autowired
+	LoanDao loanDao;
+	static String message="ID NOT FOUND";
+	
+	@Override
+	//service method to view loan request based on loanId
+	public Loan viewLoanRequest(int loanId) throws LoanException {
+		Loan loan = loanDao.viewLoanRequest(loanId);
+		if(loan == null)
+			throw new LoanException(loanId+" "+message);
+		return loan;
+	}
+
+	@Override
+	//service method to add loan request
+	public Loan addLoanRequest(Loan loan) throws LoanException {
+		loan.setLoanStatus("pending");
+		return loanDao.addLoanRequest(loan);
+	}
+
+	
+	@Override
+	//service method to delete loan request
+	public Loan deleteLoanRequest(int loanId) throws LoanException {
+		
+		Loan loan = loanDao.deleteLoanRequest(loanId);
+		if(loan == null)
+			throw new LoanException(loanId+" "+message);
+		return loan;
+	}
+
+	@Override
+	//service method to list all loan requests
+	public List<Loan> listLoanRequests() throws LoanException {
+		
+		List<Loan> list = loanDao.listLoanRequests();
+		if(list.isEmpty())
+		{
+			 throw new LoanException("Empty Record");
+		}
+		return list;
+	}
+
+	@Override
+	//service method to update loan request
+	public Loan updateLoanRequest(Loan loan) throws LoanException {
+		if(loanDao.viewLoanRequest(loan.getLoanId())!=null) {
+			loan.setLoanStatus("pending");
+			loanDao.updateLoanRequest(loan);
+		}
+		else
+			throw new LoanException(loan.getLoanId()+" "+message);
+		return loan;
+	}
+	
+	
+
+	@Override
+	//service method to only list requests for particular customer based on customerId
+	public List<Loan> loanRequestsForCustomer(int customerId) throws LoanException {
+		List<Loan> list = loanDao.loanRequestsForCustomer(customerId);
+		if(list.isEmpty())
+		{
+			 throw new LoanException("Empty Record");
+		}
+		return list;
+	}
+	 
+
+}

@@ -1,0 +1,5 @@
+package com.cg.obms.service;
+
+public interface CategoryService {
+
+}

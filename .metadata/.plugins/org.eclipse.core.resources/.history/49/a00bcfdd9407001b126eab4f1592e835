@@ -1,0 +1,5 @@
+package com.cg.obms.exception;
+
+public class CategoryException {
+
+}

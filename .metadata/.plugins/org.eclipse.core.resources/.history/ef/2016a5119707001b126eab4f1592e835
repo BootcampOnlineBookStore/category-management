@@ -1,0 +1,20 @@
+package com.cg.obms.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cg.obms.entity.Category;
+import com.cg.obms.exception.CategoryException;
+
+@Service
+public class CategoryServiceImpl implements CategoryService{
+
+	
+	@Override
+	public List<Category> listAllCategories() throws CategoryException {
+	
+		return null;
+	}
+
+}
