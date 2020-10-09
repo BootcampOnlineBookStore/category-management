@@ -32,10 +32,12 @@ public class Category {
 	/*
 	 * @Column(name = "cat_addedOn") private LocalDate categoryAddedOn;
 	 */
-	
-	  @JsonIgnore
-	  @OneToMany(mappedBy = "category",cascade = CascadeType.REMOVE) 
-	  private List<Book> books = new ArrayList<Book>();
+	/*
+	 * @JsonIgnore
+	 * 
+	 * @OneToMany(mappedBy = "category",cascade = CascadeType.REMOVE) private
+	 * List<Book> books = new ArrayList<Book>();
+	 */
 	 
 	public int getCategoryId() {
 		return categoryId;
@@ -59,9 +61,11 @@ public class Category {
 	 * this.categoryAddedOn = categoryAddedOn; }
 	 */
 	
-	  public List<Book> getBooks() { return books; }
-	  
-	  public void setBooks(List<Book> books) { this.books = books; }
+	/*
+	 * public List<Book> getBooks() { return books; }
+	 * 
+	 * public void setBooks(List<Book> books) { this.books = books; }
+	 */
 	 
 	
 	
