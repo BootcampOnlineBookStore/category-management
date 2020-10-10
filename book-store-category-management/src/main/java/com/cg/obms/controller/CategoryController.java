@@ -19,6 +19,19 @@ import com.cg.obms.entity.Category;
 import com.cg.obms.exception.CategoryException;
 import com.cg.obms.service.CategoryService;
 
+/************************************************************************************
+ *          @author         Tarun Kumar Bandaru
+ *          
+ *          Description     It is a Rest Controller class that provides the 
+ *          				adding of a new category, updating a category, 
+ *          				deleting a category, searching a category, list  
+ *          				all the categories and list all books in a category. 
+ *                                                 
+ *         Version          1.0
+ *         
+ *         Created Date    	06-OCT-2020
+ ************************************************************************************/
+
 @CrossOrigin("*")
 @RestController
 public class CategoryController {

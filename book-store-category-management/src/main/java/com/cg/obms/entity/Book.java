@@ -37,9 +37,6 @@ public class Book {
 	@Column(name = "book_isbn",length = 20)
 	private String bookISBN;
 	
-	/*
-	 * @Column(name = "book_updatedOn") private LocalDate bookUpdatedOn;
-	 */
 	
 	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "category_id")
@@ -85,12 +82,7 @@ public class Book {
 		this.bookISBN = bookISBN;
 	}
 
-	/*
-	 * public LocalDate getBookUpdatedOn() { return bookUpdatedOn; }
-	 * 
-	 * public void setBookUpdatedOn(LocalDate bookUpdatedOn) { this.bookUpdatedOn =
-	 * bookUpdatedOn; }
-	 */
+	
 
 	public Category getCategory() {
 		return category;

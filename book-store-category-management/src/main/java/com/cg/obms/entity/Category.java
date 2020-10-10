@@ -29,15 +29,6 @@ public class Category {
 	@Column(name = "category_name",length = 20)
 	private String categoryName;
 	
-	/*
-	 * @Column(name = "cat_addedOn") private LocalDate categoryAddedOn;
-	 */
-	/*
-	 * @JsonIgnore
-	 * 
-	 * @OneToMany(mappedBy = "category",cascade = CascadeType.REMOVE) private
-	 * List<Book> books = new ArrayList<Book>();
-	 */
 	 
 	public int getCategoryId() {
 		return categoryId;
@@ -54,18 +45,7 @@ public class Category {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-	/*
-	 * public LocalDate getCategoryAddedOn() { return categoryAddedOn; }
-	 * 
-	 * public void setCategoryAddedOn(LocalDate categoryAddedOn) {
-	 * this.categoryAddedOn = categoryAddedOn; }
-	 */
 	
-	/*
-	 * public List<Book> getBooks() { return books; }
-	 * 
-	 * public void setBooks(List<Book> books) { this.books = books; }
-	 */
 	 
 	
 	
