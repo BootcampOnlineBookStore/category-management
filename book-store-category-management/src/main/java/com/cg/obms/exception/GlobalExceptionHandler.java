@@ -11,6 +11,18 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
+/************************************************************************************
+ *			@author         	TARUN KUMAR BANDARU
+ *          
+ *          Description     	It is a Global exceptional handler class that is used
+ *          					to handle exceptions of CategoryException.class and
+ *          					Exception.class
+ *                                                 
+ *         	Version          	1.0
+ *         
+ *         	Created Date    	07-OCT-2020
+ ************************************************************************************/
 @ControllerAdvice
 @ResponseBody
 public class GlobalExceptionHandler {

@@ -46,4 +46,11 @@ class BookStoreCategoryManagementApplicationTests {
 				
 	}
 	
+	@Test
+	void testDeleteExsistingId() throws CategoryException{
+		Category category = categoryDao.deleteCategory(1060);
+		assertNotNull(category);
+				
+	}
+	
 }

@@ -1,0 +1,39 @@
+<div class="jumbotron">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-5">
+          <form #categoryform="ngForm" (ngSubmit)="createCategory()" novalidate>
+            <table class="table table-hover">
+
+              <div class="form-group;col-35">
+                <tr>
+                  <th>
+                  <label for="categoryName">CATEGORY </label>
+                  </th>
+                  <td>
+                  <input required [(ngModel)]="category.categoryName" pattern='' #categoryName="ngModel" type="string" class="form-control" name="categoryName"  id="categoryName" placeholder="Enter category Name">
+                  </td>
+                  <div *ngIf="categoryName.invalid && (categoryName.dirty || categoryName.touched)" class="alert alert-danger">
+                      <div *ngIf="categoryName.errors.required">
+                        category Name is required.
+                        </div>
+                       <div *ngIf="categoryName.errors.pattern">
+                        category Name should be valid.
+                       </div>
+                 </div>
+                </tr>
+              </div>
+      
+            </table><br>
+             <button    (click)=" createCategory()" [disabled]="!categoryform.form.valid" type="submit"  class="btn btn-primary"> ADD </button>
+             <button type="reset" class="btn btn-warning"> CANCEL </button>
+            
+        
+            </form>
+        </div>
+        <div class="col-sm-6"></div>
+      </div>
+    </div>
+    
+    </div>
+  

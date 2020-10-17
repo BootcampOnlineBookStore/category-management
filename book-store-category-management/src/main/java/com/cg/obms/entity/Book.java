@@ -1,7 +1,5 @@
 package com.cg.obms.entity;
 
-import java.time.LocalDate;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +11,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
+/************************************************************************************
+ *          @author         	TARUN KUMAR BANDARU 
+ *          
+ *          Description      	It is a entity class that have book title, book id, 
+ *          					book author, book price, book ISBN, book category, 
+ *          					that are mapped to book_tbl table in the database. 
+ *                                                 
+ *        	Version          	1.0
+ *         
+ *         	Created Date    	06-OCT-2020
+ ************************************************************************************/
 
 @Entity
 @Table(name = "book_tbl")

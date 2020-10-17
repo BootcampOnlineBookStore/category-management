@@ -1,0 +1,27 @@
+<div class="jumbotron text-center">
+    <marquee behavior="scroll" direction="left"><h4>WELCOME TO THE BOOK STORE</h4></marquee>
+      <table  class="table table-striped table-bordered table-hover table-condensed">
+          <tbody>
+            <tr>
+              <th>Category ID</th>
+              <th>Category Name </th>
+              <th>Action</th>
+            </tr>
+      
+           <tr *ngFor="let category of observable | async ">
+             <td>{{category.categoryId}}</td>
+             <td>{{category.categoryName}}</td>
+             <td><button class="btn btn-danger" (click)="delete(category.categoryId)">DELETE</button>
+             <button class="btn btn-warning" (click)="update(category)">EDIT</button>
+             <button class="btn btn-primary" (click)="books(category.categoryId)">view books</button>
+            </td>
+           </tr>
+          </tbody>
+      
+        </table>
+     
+    
+    </div>
+    
+    
+  

@@ -1,0 +1,28 @@
+<div *ngIf='flag'>
+    <table  class="table table-striped table-bordered table-hover table-condensed">
+        <tbody>
+          <tr>
+            <th>Book Id</th>
+            <th>Book Title</th>
+            <th>Book Category</th>
+            <th>Book ISBN</th>
+            <th>Book Author</th>
+            <th>Book Price</th>
+          </tr>
+    
+         <tr *ngFor="let book of observable | async ">
+           <td>{{book.bookId}}</td>
+           <td>{{book.bookTitle}}</td>
+           <td>{{book.category.categoryName}}</td>
+           <td>{{book.bookISBN}}</td>
+           <td>{{book.bookAuthor}}</td>
+           <td>Rs.{{book.bookPrice}}/-</td>
+         </tr>
+        </tbody>
+    
+      </table>
+   
+  
+  </div>
+
+
